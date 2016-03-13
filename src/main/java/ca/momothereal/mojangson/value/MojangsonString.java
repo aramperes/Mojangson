@@ -27,6 +27,10 @@ public class MojangsonString implements MojangsonValue<String> {
         builder.append(MojangsonToken.STRING_QUOTES).append(value).append(MojangsonToken.STRING_QUOTES);
     }
 
+    @Override
+    public Class getValueClass() {
+        return String.class;
+    }
 
     @Override
     public void read(String string) throws MojangsonParseException {

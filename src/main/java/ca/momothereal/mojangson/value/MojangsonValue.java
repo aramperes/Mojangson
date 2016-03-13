@@ -22,9 +22,15 @@ public interface MojangsonValue<T> {
     void read(String string) throws MojangsonParseException;
 
     /**
-     * Gets the current litteral value
-     * @return The current litteral value of the MojangsonValue
+     * Gets the current literal value
+     * @return The current literal value of the MojangsonValue
      */
     T getValue();
+
+    /**
+     * Gets the literal value's class
+     * @return The literal value's class
+     */
+    Class getValueClass();
 
 }
