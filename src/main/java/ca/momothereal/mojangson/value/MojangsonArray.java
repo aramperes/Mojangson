@@ -91,6 +91,9 @@ public class MojangsonArray<T extends MojangsonValue> extends ArrayList<T> imple
             }
             if (context == C_ARRAY_ELEMENT) {
                 if ((character == ELEMENT_SEPERATOR.getSymbol() || character == ARRAY_END.getSymbol()) && scope <= 1 && !inString) {
+                    if (tmpval.length() == 0) {
+                        continue;
+                    }
                     T val = (T) MojangsonFinder.readFromValue(tmpval);
 
                     if (this.getType() == null)
